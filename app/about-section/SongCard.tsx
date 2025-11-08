@@ -13,6 +13,8 @@ const SongCard = ({ title, artist, image, link }: SongProps) => {
         <Image
           src={image}
           alt={title ? title : ''}
+          width={270}
+          height={190}
           className='w-full items-stretch justify-center rounded-xl bg-cover bg-center'
         />
         <div className=' hidden h-[150%] w-full bg-gradient-to-t from-black to-transparent'></div>

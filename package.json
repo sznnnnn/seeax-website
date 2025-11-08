@@ -17,7 +17,7 @@
     "@vercel/analytics": "^0.1.11",
     "blobity": "^0.2.3",
     "eslint": "8.35.0",
-    "eslint-config-next": "13.2.3",
+    "eslint-config-next": "15.1.0",
     "framer-motion": "^10.6.1",
     "gsap": "^3.11.5",
     "next": "15.1.0",

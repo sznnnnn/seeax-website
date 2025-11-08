@@ -6,6 +6,8 @@ import { imageAnimation, bodyAnimation } from '../animations/animations';
 import AnimatedWords from '../animations/AnimatedWords';
 import profile from '../../public/profile.webp';
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Hero = () => {
   const options = { timeZone: 'Asia/Shanghai', hour12: false };
@@ -76,6 +78,16 @@ const Hero = () => {
                 height={21}
                 alt=''
               />
+            </motion.p>
+          </Link>
+          <Link
+            href='https://github.com/sznnnnn'
+            target='_blank'
+            aria-label='View GitHub Profile'>
+            <motion.p
+              className='text-[16px] font-bold text-[#e4ded7] md:text-[16px]'
+              variants={bodyAnimation}>
+              <FontAwesomeIcon icon={faGithub} className='w-5 h-5 text-[#e4ded7]' />
             </motion.p>
           </Link>
           <Link

@@ -2,8 +2,13 @@
 import Link from 'next/link';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useLanguage } from '../utils/LanguageContext';
+import { translations } from '../utils/translations';
 
 const NavBar = () => {
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // first prevent the default behavior
     e.preventDefault();
@@ -38,7 +43,7 @@ const NavBar = () => {
         onClick={handleScroll}
         aria-label='Scroll to Home Section'>
         <h4 className='rounded py-2 px-2 sm:px-4 text-[12px] sm:text-[14px] md:py-1 md:px-4'>
-          Home
+          {t.home}
         </h4>
       </Link>
       <Link
@@ -47,7 +52,7 @@ const NavBar = () => {
         onClick={handleScroll}
         aria-label='Scroll to Work Section'>
         <h4 className='rounded py-2 px-2 sm:px-4 text-[12px] sm:text-[14px] md:py-1 md:px-4'>
-          Work
+          {t.work}
         </h4>
       </Link>
 
@@ -57,7 +62,7 @@ const NavBar = () => {
         onClick={handleScroll}
         aria-label='Scroll to About Section'>
         <h4 className='rounded py-2 px-2 sm:px-4 text-[12px] sm:text-[14px] md:py-1 md:px-4'>
-          About
+          {t.about}
         </h4>
       </Link>
 
@@ -67,9 +72,16 @@ const NavBar = () => {
         onClick={handleScroll}
         aria-label='Scroll to Contact Section'>
         <h4 className='rounded py-2 px-2 sm:px-4 text-[12px] sm:text-[14px] md:py-1 md:px-4'>
-          Contact
+          {t.contact}
         </h4>
       </Link>
+
+      <button
+        onClick={toggleLanguage}
+        className='rounded py-2 px-2 sm:px-4 text-[12px] sm:text-[14px] md:py-1 md:px-4 bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-200'
+        aria-label={`Switch to ${language === 'en' ? 'Chinese' : 'English'}`}>
+        {language === 'en' ? '中文' : 'EN'}
+      </button>
     </nav>
   );
 };

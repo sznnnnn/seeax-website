@@ -3,6 +3,8 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Syne } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import { LanguageProvider } from './utils/LanguageContext';
+import Link from 'next/link';
 
 const syne = Syne({
   subsets: ['latin'],
@@ -11,7 +13,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: 'Seaa Xin — UI/UX Designer',
+  title: 'Seea Xin — UI/UX Designer',
   description:
     'UI/UX Designer, currently at Kora. Focused on interfaces and experiences, working remotely from Lagos, Nigeria.',
   generator: 'Next.js',
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
   ],
   colorScheme: 'dark',
   openGraph: {
-    title: 'Seaa Xin — UI/UX Designer',
+    title: 'Seea Xin — UI/UX Designer',
     description:
       'UI/UX Designer, currently at Wuhan. Focused on interfaces and experiences.',
     url: 'https://seeax.netlify.app/',
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
         url: 'https://user-images.githubusercontent.com/84178696/228620835-e3cc5c9b-72fc-4f54-a628-407ef7b650f5.png',
         width: 1200,
         height: 630,
-        alt: 'Seaa Xin — UI/UX Designer',
+        alt: 'Seea Xin — UI/UX Designer',
       },
     ],
     locale: 'en-US',
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Seaa Xin — UI/UX Designer',
+    title: 'Seea Xin — UI/UX Designer',
     description:
       'UI/UX Designer, currently at Wuhan. Focused on interfaces and experiences.',
     creator: 'victorwill__',
@@ -78,7 +80,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang='en'>
       <body
         className={`${syne.className} scroll-smooth scrollbar-thin scrollbar-track-[#0E1016] scrollbar-thumb-[#212531]`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

@@ -57,7 +57,7 @@ const Reviews = () => {
         target="_blank"
         className="mt-10 mb-5 sm:mb-0 sm:mt-20"
       >
-        <Image src={hireMe} alt={"hire me"} className="w-full" />
+        <Image src={hireMe} alt={"hire me"} width={800} height={200} className="w-full" />
       </motion.a>
 
       {/* <motion.div

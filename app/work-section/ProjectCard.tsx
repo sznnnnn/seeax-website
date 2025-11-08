@@ -37,6 +37,8 @@ const ProjectCard = ({
       <Image
         src={image}
         alt={name}
+        width={350}
+        height={400}
         className={`h-[220px] absolute w-full object-cover`}
       />
       <AnimatedTitle
